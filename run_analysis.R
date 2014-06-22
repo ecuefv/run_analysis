@@ -23,6 +23,11 @@ obs_tidy<-grepl("-mean[(][)]|-std[(][)]",names(tr2))
 #use the obs_tidy logical vector to filter both the training and test data sets for the variables representing mean or standard deviation
 obs_te<-tr2[,obs_tidy]
 obs_tr<-xr2[,obs_tidy]
+#clean up the column names in both data sets
+names(obs_tr)<-str_replace(names(obs_te),"[(][)]-","\\.")
+names(obs_tr)<-str_replace(names(obs_te),"[(][)]","")
+names(obs_te)<-str_replace(names(obs_te),"[(][)]-","\\.")
+names(obs_te)<-str_replace(names(obs_te),"[(][)]","")
 #collate test and trainig data into two separate data frames
 full_te<-data.frame(tr1,tr3,obs_te)
 full_tr<-data.frame(xr1,xr3,obs_tr)
