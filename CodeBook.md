@@ -23,6 +23,8 @@ full_data - data frame containig test and training data with referenced activiti
 raw_data - "narrow and long" transformation of full_data data set with subject and activity as id variables 
 tidy_data - data set with the average of each variable for each activity and each subject
 
+Variable units: With all the variables, the data has been divided by its range (gyroscope, entropy, etc) to normalise it. Therefore, the variables are represented in the datasets by ratios rather than units of measurement.
+
 The final data set (tidy_data) contains 68 variables - subject IDs, activity names and mean and stadard deviation of the following measurements:
 
 tBodyAcc-XYZ
